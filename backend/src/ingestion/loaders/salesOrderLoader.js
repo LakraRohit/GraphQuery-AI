@@ -2,8 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { parseJsonlFile } = require('../jsonlParser');
 const { getDriver } = require('../../graph/neo4jDriver');
-
-const DATA_DIR = path.join(__dirname, '../../../../sap-o2c-data');
+const { DATA_DIR } = require('../dataPath');
 const BATCH_SIZE = 100;
 
 async function load() {
