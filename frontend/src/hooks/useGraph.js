@@ -7,7 +7,7 @@ export default function useGraph() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3001/graph')
+    fetch('https://graphquery-ai-production.up.railway.app/graph')
       .then((res) => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
         return res.json();

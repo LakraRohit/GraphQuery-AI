@@ -10,7 +10,7 @@ export default function useChat() {
     setLastQuery(query);
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/query', {
+      const res = await fetch('https://graphquery-ai-production.up.railway.app/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
