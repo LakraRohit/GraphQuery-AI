@@ -8,6 +8,7 @@ router.get('/', async (req, res, next) => {
     const { nodes, edges } = await getGraph();
     res.status(200).json({ nodes, edges });
   } catch (err) {
+    console.error('[GET /graph] Error:', err.message);
     const msg = err.message || '';
     if (msg.includes('ServiceUnavailable') || msg.includes('ECONNREFUSED') || msg.includes('connection')) {
       return res.status(503).json({ message: 'Database unreachable.' });
